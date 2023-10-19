@@ -1,0 +1,28 @@
+{
+  "name": "jsdoc-react",
+  "version": "1.0.0",
+  "description": "jsdoc plugin to add @component tag and use react-docgen to provide more documentation.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "jsdoc": "jsdoc -c jsdoc.config.json -r ./examples",
+    "jsdoc:explain": "npm run jsdoc -- -X",
+    "parse-react": "react-docgen --resolver find-all-components"
+  },
+  "keywords": [
+    "jsdoc"
+  ],
+  "author": "charles-goode",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.23.0",
+    "@babel/core": "^7.23.2",
+    "@babel/preset-env": "^7.23.2",
+    "@babel/preset-react": "^7.22.15",
+    "jsdoc": "^4.0.2"
+  },
+  "dependencies": {
+    "@react-docgen/cli": "^1.0.4",
+    "react-docgen": "^6.0.4"
+  }
+}

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 /**
  * react class component example
- * @component
  */
 class ClassComp extends React.Component {
 
@@ -25,7 +24,6 @@ ClassComp.propTypes = {
 
 /**
  * react functional component example
- * @component
  */
 function FuncComp(props) {
   return <div/>
@@ -38,5 +36,5 @@ FuncComp.propTypes = {
   obj: PropTypes.shape({}),
 }
 
-
+export default ClassComp;
 

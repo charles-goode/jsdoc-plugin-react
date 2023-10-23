@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "jsdoc": "jsdoc -c jsdoc.config.json -r ./examples",
+    "jsdoc": "jsdoc -c jsdoc.config.json -r",
     "jsdoc:explain": "npm run jsdoc -- -X",
     "parse-react": "react-docgen --resolver find-all-components"
   },
@@ -22,7 +22,6 @@
     "jsdoc": "^4.0.2"
   },
   "dependencies": {
-    "@react-docgen/cli": "^1.0.4",
-    "react-docgen": "^6.0.4"
+    "react-docgen": "^5.4.3"
   }
 }

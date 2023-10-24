@@ -7,7 +7,7 @@
     "test": "jest",
     "jsdoc": "jsdoc -c jsdoc.config.json -r",
     "jsdoc:explain": "npm run jsdoc -- -X",
-    "parse-react": "react-docgen --resolver find-all-components"
+    "parse-react": "react-docgen --pretty --resolver findAllComponentDefinitions examples"
   },
   "keywords": [
     "jsdoc"

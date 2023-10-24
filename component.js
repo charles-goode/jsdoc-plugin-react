@@ -23,32 +23,41 @@ function propTableHtml(component) {
     <td>${data.description}</td>
   </tr>
     `
-  }).join();
-  return `<table>${tableheader}${rows}<caption>${component.displayName}</caption>
-    </table>`;
+  }).join("");
+  return `<table>${tableheader}${rows}</table>`;
 }
+
+let firstFile = true;
 
 exports.handlers = {
   beforeParse: function(file) {
-    let components;
+    if (firstFile) {
+      file.source += `
+/**
+ * @namespace Components
+ */
+`;
+      firstFile = false;
+    }
+    let component;
     try {
-      components = rdgModule.parse(file.source);
+      component = rdgModule.parse(file.source);
     } catch (err) {
       logger.warn("ayo check this out");
       logger.warn(file.source);
       logger.warn(err);
     }
-    if (components && components.length > 0) {
+    if (component) {
       // Need to add content and remove content
-      components.forEach((comp) => {
-        propshtml = propTableHtml(comp)
-        file.source += `
+      propshtml = propTableHtml(component)
+      file.source += `
 /**
-* @namespace ${component.displayName}
 * ${propshtml}
-*/`
-      });
-    }
+* @memberof Components
+* @name ${component.displayName}
+*/`;
+      logger.warn(file.source);
+    } 
   }
 }
 

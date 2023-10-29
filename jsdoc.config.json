@@ -1,5 +1,5 @@
 {
-    "plugins": ["component"],
+    "plugins": ["plugin"],
     "source": {
         "include": ["examples"],
         "includePattern": ".+\\.(c|m)*js(doc|x)?$",

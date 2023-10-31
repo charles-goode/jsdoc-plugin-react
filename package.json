@@ -1,5 +1,5 @@
 {
-  "name": "jsdoc-react",
+  "name": "jsdoc-plugin-react",
   "version": "1.0.0",
   "description": "jsdoc plugin to provide React component documentation.",
   "main": "index.js",

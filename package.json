@@ -1,7 +1,7 @@
 {
   "name": "jsdoc-react",
   "version": "1.0.0",
-  "description": "jsdoc plugin provide React component documentation.",
+  "description": "jsdoc plugin to provide React component documentation.",
   "main": "index.js",
   "scripts": {
     "test": "jest",
@@ -10,7 +10,11 @@
     "parse-react": "react-docgen --pretty --resolver findAllComponentDefinitions examples"
   },
   "keywords": [
-    "jsdoc"
+    "jsdoc",
+    "plugin",
+    "react",
+    "jsdoc-plugin",
+    "jsdoc-react"
   ],
   "author": "charles-goode",
   "license": "MIT",

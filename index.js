@@ -21,6 +21,11 @@ const tableheader = `
   </thead>`
 
 function propTableHtml(component) {
+  if (!component.props) {
+    return `
+    <p>No prop-types. Possibly no props</p>
+    `;
+  }
   const rows = Object.entries(component.props).map(([name, data])=> {
     return `
   <tr>
@@ -58,10 +63,10 @@ exports.handlers = {
     try {
       components = rdgModule.parse(file.source, rdgModule.resolver.findAllComponentDefinitions);
     } catch (err) {
-      if (err != "No suitable component definition found.") {
+      if (!err.message.includes("No suitable component definition found.")) {
         logger.warn(err);
-        return;
       }
+      return;
     }
 
     if (!components?.length) {
@@ -69,7 +74,7 @@ exports.handlers = {
     }
 
     const ast = parser.parse(file.source);
-    const reactComments = components.flatMap(c => [c.description, ...Object.values(c.props)?.map(p => p.description)])
+    const reactComments = components.flatMap(c => [c.description, ...Object.values(c.props ?? {})?.map(p => p.description)])
     ast.comments?.reverse().forEach(docblock => {
       const content = parseDocblock(docblock.value);
       if (reactComments.includes(content)) {

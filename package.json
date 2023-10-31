@@ -1,7 +1,7 @@
 {
   "name": "jsdoc-react",
   "version": "1.0.0",
-  "description": "jsdoc plugin to add @component tag and use react-docgen to provide more documentation.",
+  "description": "jsdoc plugin provide React component documentation.",
   "main": "index.js",
   "scripts": {
     "test": "jest",

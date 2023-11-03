@@ -10,14 +10,10 @@ Does not currently implement a jsdoc template. Does not add a new tag.
 Inpsired by [better-docs](https://github.com/SoftwareBrothers/better-docs) creating an @component tag for jsdoc, but it had too many additional features.
 
 ## Compatability
-
-This branch should work with jsdoc 3 and 4. jsdoc 5+ and react-docgen 6+ use ESM, so the plugin will need to adjust to ESM in another branch. 
-
-This main branch uses CommonJS at the time of writing because jsdoc 5 isn't published on npm, so the normal jsdoc user would need a plugin written as cjs. 
-
+This branch (2.x) should work with jsdoc 5 and react-docgen 7 which use ESM. Currently the main branch supports jsdoc 3 and 4 with react-docgen 5.x. Once jsdoc publishes version 5, I will somehow swap main to have the contents of this branch, publish it, and move the older contents to another branch for old version compatibility.
 
 ## Limitations
-See limitations of [react-docgen 5.x](https://github.com/reactjs/react-docgen/tree/5.x)
+See limitations of [react-docgen](https://github.com/reactjs/react-docgen)
 
 After react-docgen finds your components and their comments, the plugin removes any comment blocks that have the same content as comment on the components (and their props). This is so your documentation shows up in just one location (Namespace Components). If you had more than one comment with the same content, then both will be removed during doc generation.
 

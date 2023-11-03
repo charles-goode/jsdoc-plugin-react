@@ -1,13 +1,13 @@
 {
   "name": "jsdoc-plugin-react",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "jsdoc plugin to provide React component documentation.",
   "main": "index.js",
   "scripts": {
     "test": "jest",
     "jsdoc": "jsdoc -c jsdoc.config.json -r",
     "jsdoc:explain": "npm run jsdoc -- -X",
-    "parse-react": "react-docgen --pretty --resolver findAllComponentDefinitions examples"
+    "parse-react": "react-docgen --pretty --resolver find-all-components examples/*"
   },
   "keywords": [
     "jsdoc",
@@ -23,9 +23,10 @@
     "@babel/core": "^7.23.2",
     "@babel/preset-env": "^7.23.2",
     "@babel/preset-react": "^7.22.15",
-    "jsdoc": "^4.0.2"
+    "@react-docgen/cli": "^2.0.0",
+    "jsdoc": "github:jsdoc/jsdoc#jsdoc@5.0.0-dev.11"
   },
   "dependencies": {
-    "react-docgen": "^5.4.3"
+    "react-docgen": "^7.0.0"
   }
 }

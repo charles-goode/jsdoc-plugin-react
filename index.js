@@ -1,6 +1,6 @@
-var logger = require('jsdoc/util/logger');
-var rdgModule = require('react-docgen');
-var buildParser = require('react-docgen/dist/babelParser.js').default;
+import * as logger from 'jsdoc/util/logger'
+import * as rdgModule from 'react-docgen'
+import buildParser from 'react-docgen/dist/babelParser.js'
 
 const parser = buildParser();
 
@@ -41,7 +41,7 @@ function propTableHtml(component) {
 
 let firstFile = true;
 
-exports.handlers = {
+export const handlers = {
   beforeParse: function(file) {
     // Add a namespace called Components
     // that all of the components can attach to
@@ -61,7 +61,7 @@ exports.handlers = {
     // Maybe this isn't what the people want?
     let components;
     try {
-      components = rdgModule.parse(file.source, rdgModule.resolver.findAllComponentDefinitions);
+      components = rdgModule.parse(file.source, rdgModule.builtinResolvers.FindAllDefinitionsResolver);
     } catch (err) {
       if (!err.message.includes("No suitable component definition found.")) {
         logger.warn(err);

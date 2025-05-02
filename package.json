@@ -18,6 +18,11 @@
   ],
   "author": "charles-goode",
   "license": "MIT",
+  "homepage": "https://github.com/charles-goode/jsdoc-plugin-react",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/charles-goode/jsdoc-plugin-react.git"
+  }
   "devDependencies": {
     "@babel/cli": "^7.23.0",
     "@babel/core": "^7.23.2",

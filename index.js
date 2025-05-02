@@ -30,7 +30,7 @@ function propTableHtml(component) {
     return `
   <tr>
     <th scope="row">${name}</th>
-    <td>${data.type.name}</td>
+    <td>${data.type?.name}</td>
     <td>${data.required ? 'yes' : 'no'}</td>
     <td>${data.description}</td>
   </tr>
